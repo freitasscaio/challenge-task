@@ -5,12 +5,10 @@ import com.example.teste_pratico.model.StatusEnum;
 import com.example.teste_pratico.model.TaskModel;
 import com.example.teste_pratico.service.TaskService;
 import jakarta.validation.Valid;
-import jdk.jshell.Snippet;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.scheduling.config.Task;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
