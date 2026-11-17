@@ -30,7 +30,7 @@ public class TaskController {
     }
 
     @PostMapping("/{id}/conclued")
-    public ResponseEntity<Object> taskModel(@PathVariable Long id){
+    public ResponseEntity<Object> updateStatusConclued(@PathVariable Long id){
         Optional<TaskModel> taskId = taskService.findById(id);
         if(taskId.isEmpty()){
             return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado");
@@ -41,6 +41,21 @@ public class TaskController {
 
 
         taskService.markAsConclued(taskModel);
+
+        return ResponseEntity.status(HttpStatus.OK).body(taskUpdate);
+    }
+
+    @PostMapping("/{id}/inProgress")
+    public ResponseEntity<Object> updateStatusInProgress(@PathVariable Long id){
+        Optional<TaskModel> taskId = taskService.findById(id);
+        if(taskId.isEmpty()){
+            return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Id não encontrado");
+        }
+
+        TaskModel taskModel = taskId.get();
+        TaskModel taskUpdate = taskService.markAsInProgress(taskModel);
+
+        taskService.markAsInProgress(taskModel);
 
         return ResponseEntity.status(HttpStatus.OK).body(taskUpdate);
     }
