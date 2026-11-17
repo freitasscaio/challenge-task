@@ -1,4 +1,4 @@
-##COMO RODAR O PROJETO
+# COMO RODAR O PROJETO
 
 1 - Faça o clone do repositorio em sua maquina local para rodar o projeto git@github.com:freitasscaio/challenge-task.git
 
@@ -6,9 +6,9 @@
 
 Exemplo de uso no postman:
 
-Method GET:http://localhost:8080/tasks
+### Method GET:http://localhost:8080/tasks
 
-Method POST:http://localhost:8080/tasks
+### Method POST:http://localhost:8080/tasks
             body {
                 "title": "",
                 "description": ""
